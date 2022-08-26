@@ -6,8 +6,8 @@
     <RootNamespace>SqlKata.Tests</RootNamespace>
 
 		<!-- StrongName settings -->
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>SqlKata.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>SqlKata.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.0" />

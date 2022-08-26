@@ -25,8 +25,8 @@
     <NoWarn>CS1591</NoWarn>
 
 		<!-- StrongName settings -->
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>SqlKata.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>SqlKata.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard2.0\SqlKata.xml</DocumentationFile>
