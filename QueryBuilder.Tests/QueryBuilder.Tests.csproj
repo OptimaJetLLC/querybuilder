@@ -4,6 +4,10 @@
     <OutputType>Library</OutputType>
     <IsPackable>false</IsPackable>
     <RootNamespace>SqlKata.Tests</RootNamespace>
+
+    <!-- StrongName settings -->
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>SqlKata.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ConfigureAwait.Fody" Version="3.3.1">
@@ -23,3 +27,4 @@
     <ProjectReference Include="..\SqlKata.Execution\SqlKata.Execution.csproj"/>
   </ItemGroup>
 </Project>
+
