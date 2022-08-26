@@ -29,17 +29,17 @@
     <DocumentationFile>bin\Debug\netstandard2.0\SqlKata.Execution.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QueryBuilder\QueryBuilder.csproj" />
+    <ProjectReference Include="..\QueryBuilder\QueryBuilder.csproj"/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ConfigureAwait.Fody" Version="3.3.1">
-			<PrivateAssets>all</PrivateAssets>
-		</PackageReference>
-    <PackageReference Include="dapper" Version="1.50.5" />
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="dapper" Version="1.50.5"/>
     <PackageReference Include="Fody" Version="6.6.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Humanizer.Core" Version="2.8.26" />
+    <PackageReference Include="Humanizer.Core" Version="2.8.26"/>
   </ItemGroup>
 </Project>
