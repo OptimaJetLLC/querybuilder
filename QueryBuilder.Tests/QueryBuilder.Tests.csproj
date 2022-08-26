@@ -5,7 +5,7 @@
     <IsPackable>false</IsPackable>
     <RootNamespace>SqlKata.Tests</RootNamespace>
 
-		<!-- StrongName settings -->
+    <!-- StrongName settings -->
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>SqlKata.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>

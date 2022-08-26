@@ -24,7 +24,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <NoWarn>CS1591</NoWarn>
 
-		<!-- StrongName settings -->
+    <!-- StrongName settings -->
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>SqlKata.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
