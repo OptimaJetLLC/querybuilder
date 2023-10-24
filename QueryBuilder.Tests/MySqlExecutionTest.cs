@@ -2,10 +2,10 @@ using SqlKata.Compilers;
 using Xunit;
 using SqlKata.Execution;
 using MySql.Data.MySqlClient;
-using System;
 using System.Linq;
-using static SqlKata.Expressions;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace SqlKata.Tests
 {
@@ -251,12 +251,10 @@ namespace SqlKata.Tests
 
         QueryFactory DB()
         {
-            var host = System.Environment.GetEnvironmentVariable("SQLKATA_MYSQL_HOST");
-            var user = System.Environment.GetEnvironmentVariable("SQLKATA_MYSQL_USER");
-            var dbName = System.Environment.GetEnvironmentVariable("SQLKATA_MYSQL_DB");
-            var cs = $"server={host};user={user};database={dbName}";
+            var settings = File.ReadAllText("config.json");
+            var deserializedSettings = JsonConvert.DeserializeObject<dynamic>(settings);
 
-            var connection = new MySqlConnection(cs);
+            var connection = new MySqlConnection(deserializedSettings.ConnectionStrings.MySql.ToString());
 
             var db = new QueryFactory(connection, new MySqlCompiler());
 
