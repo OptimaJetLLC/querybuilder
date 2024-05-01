@@ -21,10 +21,21 @@ copy-sources:
 dotnet-build-sqlkata:
   FROM +copy-sources
   RUN dotnet build ./SqlKata.Execution/SqlKata.Execution.csproj --configuration Release --output /build
-  SAVE ARTIFACT /build AS LOCAL build
+  SAVE ARTIFACT /build
 
-publish-sqlkata-nuget:
+prepare-sqlkata-archive:
+  COPY +dotnet-build-sqlkata/build .
+  RUN tar -zcvf sqlkata.tgz *
+  SAVE ARTIFACT sqlkata.tgz AS LOCAL .archives/sqlkata.tgz
+
+publish-artifact-sqlkata-nuget:
   COPY +dotnet-build-sqlkata/build .
   RUN --push --secret NUGET_API_KEY env NUGET_API_KEY="$NUGET_API_KEY" \
     dotnet nuget push ./*.nupkg --api-key $NUGET_API_KEY \
+    --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+publish-archive-sqlkata-nuget:
+  COPY .archives/sqlkata.tgz .
+  RUN --push --secret NUGET_API_KEY env NUGET_API_KEY="$NUGET_API_KEY" \
+    dotnet nuget push sqlkata.tgz --api-key $NUGET_API_KEY \
     --source https://api.nuget.org/v3/index.json --skip-duplicate
