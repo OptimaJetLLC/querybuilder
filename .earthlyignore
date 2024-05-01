@@ -1,0 +1,15 @@
+.fleet
+.github
+.idea
+
+Program/bin
+Program/obj
+
+QueryBuilderProgram/bin
+QueryBuilder/obj
+
+QueryBuilder.Tests/bin
+QueryBuilder.Tests/obj
+
+SqlKata.Execution/bin
+SqlKata.Execution/obj
