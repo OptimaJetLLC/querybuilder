@@ -1,5 +1,5 @@
 VERSION 0.8
-FROM mcr.microsoft.com/dotnet/sdk:6.0
+FROM mcr.microsoft.com/dotnet/sdk:8.0
 WORKDIR sqlkata
 
 dotnet-restore-sqlkata:
@@ -20,7 +20,7 @@ copy-sources:
 
 dotnet-build-sqlkata:
   FROM +copy-sources
-  RUN dotnet build ./SqlKata.Execution/SqlKata.Execution.csproj --configuration Release --output /build
+  RUN dotnet build --no-restore ./SqlKata.Execution/SqlKata.Execution.csproj --configuration Release --output /build
   SAVE ARTIFACT /build
 
 publish-artifact-sqlkata-nuget:
