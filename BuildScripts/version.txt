@@ -1,2 +1,2 @@
-Version=0.0.2
-Package=0.0.2
+Version=1.0.0
+Package=1.0.0
